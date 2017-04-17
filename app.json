@@ -1,15 +1,13 @@
 {
 	"id": "nl.nielsdeklerk.log",
-	"name": {
-		"en": "Simple LOG"
-	},
+	"name": { "en": "Simple LOG"},
+    "description": { "en": "This app log's text" },
+    "category": "tools",
+    "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
 	"version": "0.0.2",
-    
 	"compatibility": "1.x",
-	"author": {
-		"name": "Niels de Klerk",
-		"email": "mail@nielsdeklerk.nl"
-	},
+	"author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
+    "tags": { "en": [ "Log", "Tools"] },
 	"flow": {
 		"actions": [{
 			"id": "Input_log",
