@@ -1,4 +1,4 @@
-"# Simple LOG"
+# Simple LOG
 
 This app makes it possible to add some logging to your flow's.
 It is simple in every way. it's simple to use and it's simple in terms of code. The donation button below contains more code then the app itself.
