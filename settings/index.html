@@ -1,20 +1,14 @@
 <!doctype html>
 <html>
     <head>
-
     </head>
     <body>
-
-        <h1>Logger</h1>
-
+        <h1>Simple LOG</h1>
 		<textarea id="logtextarea" style="margin: 0px; width: 97%; height: 700px;"></textarea>
-        <button class="right" onclick="save()">Clear</button>
+        <button class="right" onclick="clear()">Clear</button>
         
-        
-
         <script type="text/javascript">
             function onHomeyReady(){
-                // secondly, get it back
                 Homey.get('myLog', function(err, myLog){
                     if( err ) return console.error('Could not get log', err);
                     if (document.getElementById('logtextarea').value != myLog){
@@ -24,7 +18,7 @@
                 Homey.ready()
             }
 
-            function save() {
+            function clear() {
                 Homey.set('myLog', '');
             }
 
