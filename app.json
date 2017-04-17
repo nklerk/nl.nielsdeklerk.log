@@ -1,0 +1,29 @@
+{
+    "id": "nl.nielsdeklerk.log",
+    "name": {
+        "en": "Log Events"
+    },
+    "version": "0.0.1",
+    "compatibility": "1.x",
+    "author": {
+        "name": "Niels de Klerk",
+        "email": "mail@nielsdeklerk.nl"
+    },
+	 "flow":{
+    "actions": [
+        {
+            "id": "Input_log",
+            "title": {
+                "en": "Add Somthing to the log.",
+                "nl": "Voeg iets toe aan de log."
+            },
+            "args": [
+                    {
+                        "name": "log",
+                        "type": "text"
+                    }
+                ]
+        }
+    ]
+  }
+}
