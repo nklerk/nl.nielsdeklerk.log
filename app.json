@@ -4,7 +4,7 @@
     "description": { "en": "This app log's text" },
     "category": "tools",
     "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"compatibility": "1.x",
 	"author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
     "tags": { "en": [ "Log", "Tools"] },
@@ -19,6 +19,14 @@
 				"name": "log",
 				"type": "text"
 			}]
-		}]
+		},
+		{
+			"id": "Clear_log",
+			"title": {
+				"en": "clear log data.",
+				"nl": "Verweider log data."
+			}
+		}
+		]
 	}
 }

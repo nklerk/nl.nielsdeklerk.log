@@ -5,27 +5,50 @@
     <body>
         <h1>Simple LOG</h1>
 		<textarea id="logtextarea" style="margin: 0px; width: 97%; height: 700px;"></textarea>
-        <button class="right" onclick="clear()">Clear</button>
+        <button id="clear_simpleLOG" class="left" onclick="clear_simpleLOG()">Clear Log</button>
+        <button id="download_simpleLOG" class="left" onclick="download_simpleLOG()">Download</button>
         
         <script type="text/javascript">
+            var _myLog = '';
             function onHomeyReady(){
+                show_log();
+                Homey.ready();
+            }
+
+            function clear_simpleLOG(){
+                Homey.set('myLog', '');
+            };
+
+            function download_simpleLOG(){
+                download('Simple LOG.txt', document.getElementById('logtextarea').value);
+            };
+
+            function download(filename, text) {
+                var pom = document.createElement('a');
+                pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                pom.setAttribute('download', filename);
+
+                if (document.createEvent) {
+                    var event = document.createEvent('MouseEvents');
+                    event.initEvent('click', true, true);
+                    pom.dispatchEvent(event);
+                }
+                else {
+                    pom.click();
+                }
+            }
+
+            function show_log() {
                 Homey.get('myLog', function(err, myLog){
                     if( err ) return console.error('Could not get log', err);
-                    if (document.getElementById('logtextarea').value != myLog){
+                    if (_myLog !== myLog){
+                        _myLog = myLog
                         document.getElementById('logtextarea').value = myLog;
                     }
                 });
-                Homey.ready()
+                setTimeout(show_log, 1000);
             }
 
-            function clear() {
-                Homey.set('myLog', '');
-            }
-
-            setInterval(function() {
-                onHomeyReady()
-            }, 1000);
         </script>
-
     </body>
 </html>

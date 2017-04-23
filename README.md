@@ -13,6 +13,14 @@ You may leave me a donation if you love my work.
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form> 
 
+
+## Version 0.0.3
+
+* Repaired the clear button.
+* Added a download button.
+* Added action card to clear log data.
+
+
 ## Features
 
 * Use the log activity card, and add some text to the log.
