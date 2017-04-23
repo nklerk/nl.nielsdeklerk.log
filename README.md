@@ -14,7 +14,7 @@ You may leave me a donation if you love my work.
 </form> 
 
 
-## Version 0.0.3
+## Version 0.0.4
 
 * Repaired the clear button.
 * Added a download button.
