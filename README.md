@@ -13,6 +13,14 @@ You may leave me a donation if you love my work.
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form> 
 
+## Version 1.0.0
+* Now using SDKv2.
+* Added Date to logging.
+* Added Time to logging.
+* Ability to show or hide Date.
+* Ability to show or hide Time.
+* Ability to disable Autorefresh.
+
 ## Version 0.0.5
 * Fixed a Typo.
 
