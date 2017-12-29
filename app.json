@@ -1,20 +1,40 @@
 {
 	"id": "nl.nielsdeklerk.log",
 	"sdk": 2,
-	"name": { "en": "Simple LOG"},
-    "description": { "en": "This app log's text" },
+	"name": {
+		"en": "Simple LOG"
+	},
+    "description": { "en": "Use this app for simple logging." },
     "category": "tools",
     "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"compatibility": "1.x >=1.5.0",
 	"author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
-    "tags": { "en": [ "Log", "Tools"] },
+	"tags": { "en": [ "Log", "Tools", "simple", "sys"] },
+	"contributors": {
+        "developers": [
+            {
+                "name": "Niels de Klerk",
+				"email": "mail@nielsdeklerk.nl"
+            }
+        ]
+    },
+	"contributing": {
+        "donate": {
+            "paypal": {
+                "username": "NielsdeKlerk"
+            }
+        }
+    },
+	"bugs": {
+        "url": "https://github.com/nklerk/nl.nielsdeklerk.log/issues"
+    },
 	"flow": {
 		"actions": [{
 			"id": "Input_log",
 			"title": {
-				"en": "Add Something to the log.",
-				"nl": "Voeg iets toe aan de log."
+				"en": "Add Something to the log",
+				"nl": "Voeg iets toe aan de log"
 			},
 			"args": [{
 				"name": "log",
@@ -24,9 +44,20 @@
 		{
 			"id": "Clear_log",
 			"title": {
-				"en": "clear log data.",
-				"nl": "Verwijder log data."
+				"en": "Clear log data",
+				"nl": "Verwijder log data"
 			}
+		},
+		{
+			"id": "Clear_log_Older",
+			"title": {
+				"en": "Clear log data older then (Dagen)",
+				"nl": "Verwijder log data ouder dan (Dagen)"
+			},
+			"args": [{
+				"name": "days",
+				"type": "number"
+			}]
 		}
 		]
 	}

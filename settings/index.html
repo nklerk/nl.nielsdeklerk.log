@@ -4,13 +4,31 @@
         <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
         <script type="text/javascript" src="settings.js" data-origin="settings"></script>
     </head>
+    <style>
+        i {
+            margin-right: 20px;
+        }
+
+        .logline {
+            height: 10px;
+            line-height: 10px;
+            white-space: nowrap;
+        }
+    </style>
     <body>
-        <h1>Simple LOG</h1>
-        <input type="checkbox" id="show_date" onClick="show_log()" checked > Show DATE<br>
-        <input type="checkbox" id="show_time" onClick="show_log()" checked > Show TIME<br>
-        <input type="checkbox" id="show_refresh" onClick="show_log()" checked > Auto refresh (every 1 Sec)<br>
-		<textarea id="logtextarea" style="margin: 0px; width: 97%; height: 700px;"></textarea>
-        <button id="clear_simpleLOG" class="left" onclick="clear_simpleLOG()">Clear Log</button>
-        <button id="download_simpleLOG" class="left" onclick="download_simpleLOG()">Download</button>
+        <div id="logView" class= "dblock" style="display: block;">
+            <div style="top: -1px;position: absolute;width: 100%;left: 0px;">
+                <div>
+                    <input type="checkbox" id="show_date" onClick="show_log(true)" checked >            <i class="fa fa-calendar-plus-o"></i>       </input>
+                    <input type="checkbox" id="show_time" onClick="show_log(true)" checked >            <i class="fa fa-clock-o"></i>               </input>
+                    <input type="checkbox" id="show_refresh" onClick="show_log(true)" checked >         <i class="fa fa-refresh"></i>               </input>
+                    <input type="checkbox" id="show_td" onClick="show_log(true)" checked >            <i class="fa fa-sort-numeric-asc"></i>      </input>
+                    <button id="download_simpleLOG" onclick="download_simpleLOG()"> <i class="fa fa-download"></i> CSV </button>
+                    <button id="clear_simpleLOG" onclick="clear_simpleLOG()"><i class="fa fa-trash-o"></i> Clear </button>
+                </div>
+                <div id="logtextarea" style="margin: 0px; width: 90%; height: 700px; font-family: monospace; font-size: xx-small; margin-top: 10px;">
+                    Log...
+                </div>
+            </div>
     </body>
 </html>
