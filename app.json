@@ -7,7 +7,7 @@
     "description": { "en": "Use this app for simple logging." },
     "category": "tools",
     "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"compatibility": "1.x >=1.5.0",
 	"author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
 	"tags": { "en": [ "Log", "Tools", "simple", "sys"] },
@@ -28,7 +28,8 @@
     },
 	"bugs": {
         "url": "https://github.com/nklerk/nl.nielsdeklerk.log/issues"
-    },
+	},
+	"athomForumDiscussionId": 3052,
 	"flow": {
 		"actions": [{
 			"id": "Input_log",

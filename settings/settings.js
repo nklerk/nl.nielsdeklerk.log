@@ -69,6 +69,16 @@ function show_log(force) {
     });
 }
 
+function show_size(force) {
+    let lt = document.getElementById('logtextarea');
+    let show_ft   = document.getElementById("show_ft").checked;
+    if (show_ft) {
+        lt.style.fontSize = "large";
+    } else {
+        lt.style.fontSize = "xx-small";
+    }
+}
+
 
 function formatDT (dateIn, returnDate, returnTime){
     let date = new Date(dateIn);

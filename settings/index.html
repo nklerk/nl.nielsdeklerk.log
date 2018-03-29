@@ -10,8 +10,8 @@
         }
 
         .logline {
-            height: 10px;
-            line-height: 10px;
+            height: auto;
+            line-height: initial;
             white-space: nowrap;
         }
     </style>
@@ -19,11 +19,12 @@
         <div id="logView" class= "dblock" style="display: block;">
             <div style="top: -1px;position: absolute;width: 100%;left: 0px;">
                 <div>
-                    <input type="checkbox" id="show_date" onClick="show_log(true)" checked >            <i class="fa fa-calendar-plus-o"></i>       </input>
-                    <input type="checkbox" id="show_time" onClick="show_log(true)" checked >            <i class="fa fa-clock-o"></i>               </input>
-                    <input type="checkbox" id="show_refresh" onClick="show_log(true)" checked >         <i class="fa fa-refresh"></i>               </input>
-                    <input type="checkbox" id="show_td" onClick="show_log(true)" checked >            <i class="fa fa-sort-numeric-asc"></i>      </input>
-                    <button id="download_simpleLOG" onclick="download_simpleLOG()"> <i class="fa fa-download"></i> CSV </button>
+                    <input type="checkbox" id="show_date" onClick="show_log(true)" checked > <i class="fa fa-calendar-plus-o"></i> </input>
+                    <input type="checkbox" id="show_time" onClick="show_log(true)" checked > <i class="fa fa-clock-o"></i> </input>
+                    <input type="checkbox" id="show_refresh" onClick="show_log(true)" checked > <i class="fa fa-refresh"></i> </input>
+                    <input type="checkbox" id="show_td" onClick="show_log(true)" checked > <i class="fa fa-sort-numeric-asc"> </i> </input>
+                    <input type="checkbox" id="show_ft" onClick="show_size(true)" > <i class="fa fa-font"> </i> </input>
+                    <button id="download_simpleLOG" onclick="download_simpleLOG()"> <i class="fa fa-download"> </i> CSV </button>
                     <button id="clear_simpleLOG" onclick="clear_simpleLOG()"><i class="fa fa-trash-o"></i> Clear </button>
                 </div>
                 <div id="logtextarea" style="margin: 0px; width: 90%; height: 700px; font-family: monospace; font-size: xx-small; margin-top: 10px;">

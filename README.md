@@ -4,6 +4,9 @@ This app makes it possible to add some logging to your flow's.
 It is simple in every way. it's simple to use and it's simple in terms of code. The donation button below contains more code then the app itself.
 
 
+## Version 2.1.0
+* Added function to switch between font sizes.
+
 ## Version 2.0.0
 * API Support, Now you can simply log from anywhere. 
     send a HTTP PUT
