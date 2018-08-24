@@ -22,6 +22,10 @@ The folowing API endpoints can be used:
 
 # History
 
+## Version 2.2.1
+
+- Added Community ID.
+
 ## Version 2.2.0
 
 - Added API: get log feature. GET http://<HOST>/api/app/nl.nielsdeklerk.log/ to get all logging.

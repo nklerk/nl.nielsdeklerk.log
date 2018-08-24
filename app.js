@@ -47,6 +47,8 @@ module.exports = simpleLog;
 // FLOW Action Card, actionInputLog
 let actionInputLog = new Homey.FlowCardAction("Input_log");
 actionInputLog.register().registerRunListener((args, state) => {
+  console.log(args);
+  console.log(state);
   addLogToDB(args.log);
   return true;
 });
