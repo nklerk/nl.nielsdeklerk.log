@@ -22,6 +22,15 @@ The folowing API endpoints can be used:
 
 # History
 
+## Version 2.3.0
+
+- updated app for v2.0
+- removed CSV download (doesn't work inside the gen2 app)
+
+## Version 2.2.2
+
+- removed csv button
+
 ## Version 2.2.1
 
 - Added Community ID.
