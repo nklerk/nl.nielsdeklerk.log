@@ -14,18 +14,22 @@
             line-height: initial;
             white-space: nowrap;
         }
+        input{
+            margin-top: 10px;
+            margin-right: 10%;
+        }
     </style>
     <body>
         <div id="logView" class= "dblock" style="display: block;">
             <div style="top: -1px;position: absolute;width: 100%;left: 0px;">
                 <div>
-                    <input type="checkbox" id="show_date" onClick="show_log(true)" checked > <img src="date.svg"height="24" width="24"> </input>
-                    <input type="checkbox" id="show_time" onClick="show_log(true)" checked > <img src="time.svg"height="24" width="24"> </input>
-                    <input type="checkbox" id="show_refresh" onClick="show_log(true)" checked > <img src="refresh.svg"height="24" width="24"> </input>
-                    <input type="checkbox" id="show_td" onClick="show_log(true)" checked > <img src="sort.svg"height="24" width="24"> </input>
-                    <input type="checkbox" id="show_ft" onClick="show_size(true)" > <img src="font.svg"height="24" width="24"> </input>
+                    <input type="checkbox" id="show_date" style="background-image: url(./date.png);" onClick="show_log(true)" checked ></input>
+                    <input type="checkbox" id="show_time" style="background-image: url(./time.png);" onClick="show_log(true)" checked > </input>
+                    <input type="checkbox" id="show_refresh" style="background-image: url(./refresh.png);" onClick="show_log(true)" checked >  </input>
+                    <input type="checkbox" id="show_td" style="background-image: url(./sort.png);" onClick="show_log(true)" checked > </input>
+                    <input type="checkbox" id="show_ft" style="background-image: url(./font.png);" onClick="show_size(true)" >  </input>
                     <!-- <button id="download_simpleLOG" onclick="download_simpleLOG()"> <img src="download.svg"height="24" width="24"> CSV </button> -->
-                    <button id="clear_simpleLOG" onclick="clear_simpleLOG()"><img src="trash.svg"height="24" width="24" style="float: right;"> Clear </button>
+                    <!-- <button id="clear_simpleLOG" onclick="clear_simpleLOG()"><img src="trash.svg"height="24" width="24" style="float: right;"> Clear </button> -->
                 </div>
                 <div id="logtextarea" style="margin: 0px; width: 90%; height: 700px; font-family: monospace; font-size: xx-small; margin-top: 10px;">
                     Log...

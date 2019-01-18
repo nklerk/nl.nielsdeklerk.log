@@ -1,13 +1,14 @@
 {
   "id": "nl.nielsdeklerk.log",
   "sdk": 2,
+  "brandColor": "#BC274A",
   "name": {
     "en": "Simple LOG"
   },
   "description": { "en": "Use this app for simple logging." },
   "category": "tools",
   "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
-  "version": "2.3.0",
+  "version": "2.4.0",
   "compatibility": ">=1.5.0",
   "author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
   "tags": { "en": ["Log", "Tools", "simple", "sys"] },
@@ -51,10 +52,69 @@
         ]
       },
       {
+        "id": "Input_logtimeline",
+        "title": {
+          "en": "Add Something to the timeline and log",
+          "nl": "Voeg iets toe aan de tijdslijn en log"
+        },
+        "args": [
+          {
+            "name": "log",
+            "type": "text",
+            "placeholder": {
+              "en": "Data to log...",
+              "nl": "Gegevens voor logboek..."
+            }
+          }
+        ]
+      },
+      {
+        "id": "Input_timeline",
+        "title": {
+          "en": "Add Something to the timeline",
+          "nl": "Voeg iets toe aan de tijdslijn"
+        },
+        "args": [
+          {
+            "name": "log",
+            "type": "text",
+            "placeholder": {
+              "en": "Data to log...",
+              "nl": "Gegevens voor logboek..."
+            }
+          }
+        ]
+      },
+      {
         "id": "Input_group_log",
         "title": {
           "en": "Add Something to a log group",
           "nl": "Voeg iets toe aan een log groep"
+        },
+        "args": [
+          {
+            "name": "group",
+            "type": "text",
+            "placeholder": {
+              "en": "Group name...",
+              "nl": "Groepsnaam..."
+            }
+          },
+          {
+            "name": "log",
+            "type": "text",
+            "placeholder": {
+              "en": "Data to log...",
+              "nl": "Gegevens voor logboek..."
+            }
+          }
+        ]
+      },
+      {
+        "id": "Input_group_logtimeline",
+        "title": {
+          "en": "Add Something to the timeline and a log group",
+          "nl": "Voeg iets toe aan de tijdslijn en een log groep"
         },
         "args": [
           {

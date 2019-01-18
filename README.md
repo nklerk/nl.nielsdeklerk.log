@@ -22,6 +22,11 @@ The folowing API endpoints can be used:
 
 # History
 
+## Version 2.4.0
+
+- Added posibility to add logging to the timeline (visible on homescreen v2 App).
+- changed setting appearance.
+
 ## Version 2.3.0
 
 - updated app for v2.0

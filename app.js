@@ -3,21 +3,29 @@ const Homey = require("homey");
 const DBLIMIT = 2000;
 let loggingDB = [];
 
+// Array check.
 function isArray(a) {
   return !!a && a.constructor === Array;
 }
 
-// The heart of this app.
+// The heart of this app. adding a log entry
 function addLogToDB(data, group) {
-  const logLine = { data, group, date: new Date() };
-  console.log("count: " + loggingDB.length);
+  checkSurplusEntries();
+  loggingDB.push({ data, group, date: new Date() });
+  Homey.ManagerSettings.set("loggingDB", loggingDB);
+}
+
+// Adding a log entry to Timeline.
+function addLogToTimeline(data) {
+  Homey.ManagerNotifications.registerNotification({ excerpt: data }, (e, n) => {});
+}
+
+//Limit amount of log entries to 2000.
+function checkSurplusEntries() {
   if (loggingDB.length > DBLIMIT) {
     let tomuch = loggingDB.length - DBLIMIT;
-    console.log("tomuch: " + tomuch);
     loggingDB.splice(0, tomuch);
   }
-  loggingDB.push(logLine);
-  Homey.ManagerSettings.set("loggingDB", loggingDB);
 }
 
 //App Class...
@@ -47,9 +55,22 @@ module.exports = simpleLog;
 // FLOW Action Card, actionInputLog
 let actionInputLog = new Homey.FlowCardAction("Input_log");
 actionInputLog.register().registerRunListener((args, state) => {
-  console.log(args);
-  console.log(state);
   addLogToDB(args.log);
+  return true;
+});
+
+// FLOW Action Card, actionInputLog
+let actionInputLogTimeline = new Homey.FlowCardAction("Input_logtimeline");
+actionInputLogTimeline.register().registerRunListener((args, state) => {
+  addLogToDB(args.log);
+  addLogToTimeline(args.log);
+  return true;
+});
+
+// FLOW Action Card, actionInputLog
+let actionInputTimeline = new Homey.FlowCardAction("Input_timeline");
+actionInputTimeline.register().registerRunListener((args, state) => {
+  addLogToTimeline(args.log);
   return true;
 });
 
@@ -57,6 +78,14 @@ actionInputLog.register().registerRunListener((args, state) => {
 let actionInputGroupLog = new Homey.FlowCardAction("Input_group_log");
 actionInputGroupLog.register().registerRunListener((args, state) => {
   addLogToDB(args.log, args.group);
+  return true;
+});
+
+// FLOW Action Card, actionInputLog
+let actionInputGroupLogTimeline = new Homey.FlowCardAction("Input_group_logtimeline");
+actionInputGroupLogTimeline.register().registerRunListener((args, state) => {
+  addLogToDB(args.log, args.group);
+  addLogToTimeline(args.log);
   return true;
 });
 
