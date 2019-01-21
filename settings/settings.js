@@ -30,8 +30,9 @@ function show_csv() {
     csv = csv + `<div class="logline">Open the Simple log settings,</div>`;
     csv = csv + `<div class="logline">then use the CSV button.</div>`;
     csv = csv + `<div class="logline">Or copy the log in CSV format below:</div>`;
-    csv = csv + `<div class="logline"></div>`;
-    csv = csv + `<div class="logline"></div>`;
+    csv = csv + `<div class="logline"></div><br>`;
+    csv = csv + `<div class="logline"></div><br>`;
+    csv = csv + `<div class="logline"></div><br>`;
     csv = csv + `<div class="logline">date;group;data</div>`;
     let log = "";
     for (i in logging) {
