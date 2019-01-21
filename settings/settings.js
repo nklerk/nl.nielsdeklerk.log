@@ -16,9 +16,34 @@ function download_simpleLOG() {
   Homey.get("loggingDB", function(err, logging) {
     let csv = "date;group;data\r\n";
     for (i in logging) {
-      csv = csv + logging[i].date + ';"' + cleanForCsv(logging[i].group) + '";"' + cleanForCsv(logging[i].data) + '"\r\n';
+      csv = csv + `${logging[i].date};${cleanForCsv(logging[i].group)};${cleanForCsv(logging[i].data)}\r\n`;
     }
     download("Simple LOG.csv", csv);
+  });
+}
+
+function show_csv() {
+  Homey.get("loggingDB", function(err, logging) {
+    download_simpleLOG();
+    let csv = `<div class="logline">CSV log file can't be downloaded within the app.</div>`;
+    csv = csv + `<div class="logline">Go to the Homey developer site at https://developer.athom.com/tools/app-settings</div>`;
+    csv = csv + `<div class="logline">Open the Simple log settings,</div>`;
+    csv = csv + `<div class="logline">then use the CSV button.</div>`;
+    csv = csv + `<div class="logline">Or copy the log in CSV format below:</div>`;
+    csv = csv + `<div class="logline"></div>`;
+    csv = csv + `<div class="logline"></div>`;
+    csv = csv + `<div class="logline">date;group;data</div>`;
+    let log = "";
+    for (i in logging) {
+      const logline = `<div class="logline">${logging[i].date};${cleanForCsv(logging[i].group)};${cleanForCsv(logging[i].data)}</div>`;
+      if (show_td) {
+        log = logline + log;
+      } else {
+        log = log + logline;
+      }
+    }
+    csv = csv + log;
+    document.getElementById("logtextarea").innerHTML = csv;
   });
 }
 

@@ -11,6 +11,8 @@ The donation button below contains more code then the app itself. ;-)
 - Clear your log.
 - View your log in the app settings.
 - the log view will refresh when a new line of text is added to the log.
+- within the homey app you can view the log in CSV format.
+- within the developer tools you can download the log in CSV format. -> https://developer.athom.com/tools/app-settings
 
 # API
 
@@ -21,6 +23,12 @@ The folowing API endpoints can be used:
 - GET /api/app/nl.nielsdeklerk.log/clearlog
 
 # History
+
+## Version 2.4.1
+
+- re-added the clear log button in settings. (Dragg screen to left.)
+- re-added the CSV button. (Now shows in-app as CSV format text)
+- while using the CSV button at https://developer.athom.com/tools/app-settings will download the log in CSV format.
 
 ## Version 2.4.0
 
