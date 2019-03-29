@@ -52,14 +52,14 @@ class simpleLog extends Homey.App {
 }
 module.exports = simpleLog;
 
-// FLOW Action Card, actionInputLog
+// FLOW Action Card, Input_log
 let actionInputLog = new Homey.FlowCardAction("Input_log");
 actionInputLog.register().registerRunListener((args, state) => {
   addLogToDB(args.log);
   return true;
 });
 
-// FLOW Action Card, actionInputLog
+// FLOW Action Card, Input_logtimeline
 let actionInputLogTimeline = new Homey.FlowCardAction("Input_logtimeline");
 actionInputLogTimeline.register().registerRunListener((args, state) => {
   addLogToDB(args.log);
@@ -67,29 +67,29 @@ actionInputLogTimeline.register().registerRunListener((args, state) => {
   return true;
 });
 
-// FLOW Action Card, actionInputLog
+// FLOW Action Card, Input_timeline
 let actionInputTimeline = new Homey.FlowCardAction("Input_timeline");
 actionInputTimeline.register().registerRunListener((args, state) => {
   addLogToTimeline(args.log);
   return true;
 });
 
-// FLOW Action Card, actionInputLog
+// FLOW Action Card, Input_group_log
 let actionInputGroupLog = new Homey.FlowCardAction("Input_group_log");
 actionInputGroupLog.register().registerRunListener((args, state) => {
   addLogToDB(args.log, args.group);
   return true;
 });
 
-// FLOW Action Card, actionInputLog
+// FLOW Action Card, Input_group_logtimeline
 let actionInputGroupLogTimeline = new Homey.FlowCardAction("Input_group_logtimeline");
 actionInputGroupLogTimeline.register().registerRunListener((args, state) => {
   addLogToDB(args.log, args.group);
-  addLogToTimeline(args.log);
+  addLogToTimeline(`[${args.group}] ${args.log}`);
   return true;
 });
 
-// FLOW Action Card, actionClearlogOlder
+// FLOW Action Card, Clear_log_Older
 let actionClearlogOlder = new Homey.FlowCardAction("Clear_log_Older");
 actionClearlogOlder.register().registerRunListener((args, state) => {
   console.log("Removing log data older then " + args.days + " Day(s).");
@@ -104,7 +104,7 @@ actionClearlogOlder.register().registerRunListener((args, state) => {
   return true;
 });
 
-// FLOW Action Card, actionClearlog
+// FLOW Action Card, Clear_log
 let actionClearlog = new Homey.FlowCardAction("Clear_log");
 actionClearlog.register().registerRunListener((args, state) => {
   loggingDB = [];

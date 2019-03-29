@@ -1,9 +1,15 @@
 let _id = -1;
+let show_refresh;
+let show_date;
+let show_time;
+let show_td;
+let show_ft;
 
 function onHomeyReady(HomeyReady) {
   Homey = HomeyReady;
   console.log("Get Ready...");
   Homey.ready();
+  loaddisplayParameters();
   refreshLog();
 }
 
@@ -56,6 +62,45 @@ function cleanForCsv(value) {
   return value;
 }
 
+function loaddisplayParameters() {
+  Homey.get("show_refresh", (e, x) => {
+    show_refresh = x.checked;
+    document.getElementById("show_refresh").checked = x.checked;
+  });
+  Homey.get("show_date", (e, x) => {
+    show_date = x.checked;
+    document.getElementById("show_date").checked = x.checked;
+  });
+  Homey.get("show_time", (e, x) => {
+    show_time = x.checked;
+    document.getElementById("show_time").checked = x.checked;
+  });
+  Homey.get("show_td", (e, x) => {
+    show_td = x.checked;
+    document.getElementById("show_td").checked = x.checked;
+  });
+  Homey.get("show_ft", (e, x) => {
+    show_ft = x.checked;
+    document.getElementById("show_ft").checked = x.checked;
+    show_size();
+  });
+}
+
+function savedisplayParameters() {
+  show_refresh = document.getElementById("show_refresh").checked;
+  console.log("SET show_refresh:");
+  console.log(show_refresh);
+  Homey.set("show_refresh", { checked: show_refresh });
+  show_date = document.getElementById("show_date").checked;
+  Homey.set("show_date", { checked: show_date });
+  show_time = document.getElementById("show_time").checked;
+  Homey.set("show_time", { checked: show_time });
+  show_td = document.getElementById("show_td").checked;
+  Homey.set("show_td", { checked: show_td });
+  show_ft = document.getElementById("show_ft").checked;
+  Homey.set("show_ft", { checked: show_ft });
+}
+
 function refreshLog() {
   if (document.getElementById("show_refresh").checked === true) {
     show_log();
@@ -74,9 +119,7 @@ function show_log(force) {
       return console.error("Could not get log", err);
     }
     let log = "";
-    let show_date = document.getElementById("show_date").checked;
-    let show_time = document.getElementById("show_time").checked;
-    let show_td = document.getElementById("show_td").checked;
+    savedisplayParameters();
     if (logging.length > _id) {
       for (i in logging) {
         if (logging[i].group) {
@@ -98,9 +141,9 @@ function show_log(force) {
   });
 }
 
-function show_size(force) {
+function show_size() {
   let lt = document.getElementById("logtextarea");
-  let show_ft = document.getElementById("show_ft").checked;
+  savedisplayParameters();
   if (show_ft) {
     lt.style.fontSize = "large";
   } else {

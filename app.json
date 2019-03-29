@@ -8,8 +8,8 @@
   "description": { "en": "Use this app for simple logging." },
   "category": "tools",
   "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
-  "version": "2.4.1",
-  "compatibility": ">=1.5.0",
+  "version": "2.4.2",
+  "compatibility": ">=2.0.0",
   "author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
   "tags": { "en": ["Log", "Tools", "simple", "sys"] },
   "contributors": {

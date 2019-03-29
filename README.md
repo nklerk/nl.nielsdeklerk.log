@@ -24,6 +24,11 @@ The folowing API endpoints can be used:
 
 # History
 
+## Version 2.4.2
+
+- display settings are now memorized.
+- Now displaying groupname on homescreen.
+
 ## Version 2.4.1
 
 - re-added the clear log button in settings. (Dragg screen to left.)
