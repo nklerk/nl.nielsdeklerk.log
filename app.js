@@ -38,6 +38,8 @@ class simpleLog extends Homey.App {
     addLogToDB('App "Simple LOG" started.', "Simple LOG");
   }
   apiPutAddlog(data) {
+    console.log("API: PUT...");
+    console.log(data);
     if (data && data.body && data.body.log) {
       addLogToDB(data.body.log, data.body.group);
     }
