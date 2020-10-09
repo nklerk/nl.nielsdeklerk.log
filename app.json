@@ -5,13 +5,28 @@
   "name": {
     "en": "Simple LOG"
   },
-  "description": { "en": "Use this app for simple logging." },
+  "description": {
+    "en": "Use this app for simple logging."
+  },
   "category": "tools",
-  "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
-  "version": "2.4.3",
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "version": "2.4.5",
   "compatibility": ">=2.0.0",
-  "author": { "name": "Niels de Klerk", "email": "mail@nielsdeklerk.nl" },
-  "tags": { "en": ["Log", "Tools", "simple", "sys"] },
+  "author": {
+    "name": "Niels de Klerk",
+    "email": "mail@nielsdeklerk.nl"
+  },
+  "tags": {
+    "en": [
+      "Log",
+      "Tools",
+      "simple",
+      "sys"
+    ]
+  },
   "contributors": {
     "developers": [
       {
