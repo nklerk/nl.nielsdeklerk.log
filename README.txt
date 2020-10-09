@@ -1,7 +1,6 @@
 This app makes it possible to add logging to your Flows.
 
 With simple log You can:
-
 - Add logging to your Flows
 - tag your logging data with a group tag for tidy filtering.
 - Add logging data while simultaniously showing the message on the Homey App's Timeline.
@@ -12,10 +11,10 @@ With simple log You can:
 - You can download the log in CSV format. -> https://developer.athom.com/tools/app-settings
 - Use the API to retreive, add and clean logging.
 
+
 # API
 
 The folowing API endpoints can be used:
-
 - Grab log data:
   GET /api/app/nl.nielsdeklerk.log/
 - Add log data:
